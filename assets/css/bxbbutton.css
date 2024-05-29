@@ -1,0 +1,50 @@
+.bxbbutton {
+    background: #FF1B4C;
+    border-radius:4px;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 25px;
+    padding: 8px 8px;
+    border: none !important;
+}
+a.bxbbutton {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    -webkit-box-shadow: none !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+    transition: none !important;
+    transition: none !important;
+}
+.bxbbutton img, .bxbbutton span {
+    display: table-cell;
+    vertical-align: middle;
+    float: left;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+.bxbbutton span {
+    padding-left: 11px;
+}
+.bxbbutton:hover {
+    background-color: #6c7c7c;
+}
+.bxbbutton:active {
+    position:relative;
+    top:2px;
+}
+
+button.wc-boxberry-choose-delivery-point {
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0.5em 0.8em;
+    text-decoration: none;
+    font-weight: 600;
+    text-shadow: none;
+    display: inline-block;
+}

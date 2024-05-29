@@ -1,0 +1,164 @@
+# Copyright (C) 2017 Boxberry for WooCommerce
+# This file is distributed under the same license as the Boxberry for WooCommerce package.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Boxberry for WooCommerce 1.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/wordpress\n"
+"POT-Creation-Date: 2024-05-27 18:00+0400\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;esc_html__;_e;_ex:1,2c;esc_attr__;esc_attr_e;"
+"esc_attr_x:1,2c;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2\n"
+"X-Poedit-SearchPath-0: language\n"
+"X-Poedit-SearchPath-1: .\n"
+"X-Poedit-SearchPathExcluded-0: .idea\n"
+"X-Poedit-SearchPathExcluded-1: .github\n"
+"X-Poedit-SearchPathExcluded-2: .git\n"
+"X-Poedit-SearchPathExcluded-3: node_modules\n"
+
+#: boxberry-for-woocommerce.php:25
+msgid "Title"
+msgstr ""
+
+#: boxberry-for-woocommerce.php:30
+msgid "Boxberry API Key"
+msgstr ""
+
+#: boxberry-for-woocommerce.php:34
+msgid "Reception point code"
+msgstr ""
+
+#: boxberry-for-woocommerce.php:39
+msgid "Сost"
+msgstr ""
+
+#: boxberry-for-woocommerce.php:40
+msgid "Additional flat rate"
+msgstr ""
+
+#: boxberry-for-woocommerce.php:135
+msgid "Boxberry Self"
+msgstr ""
+
+#: boxberry-for-woocommerce.php:136 boxberry-for-woocommerce.php:153
+msgid "Default Weight"
+msgstr ""
+
+#: boxberry-for-woocommerce.php:136 boxberry-for-woocommerce.php:153
+msgid "Min Weight"
+msgstr ""
+
+#: boxberry-for-woocommerce.php:136 boxberry-for-woocommerce.php:153
+msgid "Max Weight"
+msgstr ""
+
+#: boxberry-for-woocommerce.php:136 boxberry-for-woocommerce.php:153
+msgid "Height"
+msgstr ""
+
+#: boxberry-for-woocommerce.php:136 boxberry-for-woocommerce.php:153
+msgid "Depth"
+msgstr ""
+
+#: boxberry-for-woocommerce.php:136 boxberry-for-woocommerce.php:153
+msgid "Width"
+msgstr ""
+
+#: boxberry-for-woocommerce.php:136 boxberry-for-woocommerce.php:153
+msgid "day"
+msgstr ""
+
+#: boxberry-for-woocommerce.php:136 boxberry-for-woocommerce.php:153
+msgid "days "
+msgstr ""
+
+#: boxberry-for-woocommerce.php:136 boxberry-for-woocommerce.php:153
+msgid "days"
+msgstr ""
+
+msgid "surch"
+msgstr ""
+
+msgid "ps_on_status_title"
+msgstr ""
+
+msgid "ps_on_status_desc"
+msgstr ""
+
+msgid "ps_on_status_none"
+msgstr ""
+
+msgid "order_status_send_title"
+msgstr ""
+
+msgid "order_status_send_desc"
+msgstr ""
+
+msgid "order_status_send_none"
+msgstr ""
+
+msgid "order_prefix_title"
+msgstr ""
+
+msgid "order_prefix_desc"
+msgstr ""
+
+msgid "autoact"
+msgstr ""
+
+msgid "bxbbutton"
+msgstr ""
+
+msgid "check_zip"
+msgstr ""
+
+msgid "check_zip_desc"
+msgstr ""
+
+msgid "enable_for_selected_payment_methods"
+msgstr ""
+
+msgid "enable_for_selected_payment_methods_desc"
+msgstr ""
+
+msgid "enable_for_selected_payment_methods_data_placeholder"
+msgstr ""
+
+#: boxberry-for-woocommerce.php:152
+msgid "Boxberry Self Payment After"
+msgstr ""
+
+#: boxberry-for-woocommerce.php:169
+msgid "Boxberry Courier"
+msgstr ""
+
+#: boxberry-for-woocommerce.php:178
+msgid "Boxberry Courier Payment After"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Boxberry for WooCommerce"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"The plugin allows you to automatically calculate the shipping cost and "
+"create Parsel for Boxberry"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Boxberry"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "boxberry.ru"
+msgstr ""
