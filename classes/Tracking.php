@@ -34,7 +34,7 @@ class Tracking {
 
 		$order = wc_get_order( $post );
 
-		if ( ! $order || ! is_object( $order ) ) {
+		if ( empty( $order ) || ! is_a( $order, 'WC_Order' ) ) {
 			return;
 		}
 

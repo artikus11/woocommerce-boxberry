@@ -28,7 +28,13 @@ class Helper {
 	public static function get_shipping_data( $order ): array {
 
 		$shipping_methods = $order->get_shipping_methods();
-		$shipping_method  = array_shift( $shipping_methods );
+
+		if ( empty( $shipping_methods ) ) {
+			return [];
+		}
+
+		$shipping_method = array_shift( $shipping_methods );
+		error_log( print_r( $shipping_methods, 1 ) );
 
 		$method_id          = $shipping_method->get_method_id();
 		$method_instance_id = $shipping_method->get_instance_id();
