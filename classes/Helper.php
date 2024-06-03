@@ -34,7 +34,6 @@ class Helper {
 		}
 
 		$shipping_method = array_shift( $shipping_methods );
-		error_log( print_r( $shipping_methods, 1 ) );
 
 		$method_id          = $shipping_method->get_method_id();
 		$method_instance_id = $shipping_method->get_instance_id();

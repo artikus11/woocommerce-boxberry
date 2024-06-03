@@ -267,6 +267,7 @@ class Tracking {
 			'track'  => $tracking_number,
 			'act'    => $act_link,
 			'client' => $client,
+			'order' => $order,
 		];
 
 		if ( ! empty( $error_text ) && empty( $tracking_number ) ) {
