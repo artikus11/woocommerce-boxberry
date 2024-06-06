@@ -37,7 +37,7 @@ class Order {
 			<td class="data" colspan="2">
 				<?php
 				echo wp_kses_post( sprintf(
-					'<div class="wc-edostavka-method-delivery-time"><strong>Срок доставки</strong>: %s</div>',
+					'<div class="shipping_method--delivery-time"><strong>Срок доставки</strong>: %s</div>',
 					$delivery_time,
 				) );
 				?>
