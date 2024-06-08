@@ -18,11 +18,6 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Composer Autoloader
-      run: |
-        composer install --no-dev --prefer-dist --no-progress 
-        composer dump-autoload -o 
-
     - name: FTP Deploy
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
