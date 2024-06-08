@@ -329,11 +329,18 @@ class Tracking {
 				$offset = $answer->count() - 1;
 
 				if ( $answer->offsetGet( $offset ) !== null ) {
+					if ( 'Выдано' === $answer->offsetGet( $offset )->getName() ) {
+						$data['order']->update_status( 'completed' );
+					}
+
 					return sprintf( '<div><ul class="order_notes"><li class="note system-note"><div class="note_content"><p>%s</p></div><p class="meta"><abbr class="exact-date">%s</abbr></p></li></ul></div>',
 						esc_html( $answer->offsetGet( $offset )->getName() ),
 						esc_html( $answer->offsetGet( $offset )->getDate() )
 					);
 				}
+
+
+
 			}
 		} catch ( Exception $e ) {
 			return '<div>
