@@ -1,0 +1,42 @@
+name: Deploy to stage
+
+on:
+  pull_request:
+    branches:
+      - dev
+    types: [closed]
+  push:
+    branches:
+      - dev
+
+jobs:
+  ftp-deploy:
+    name: FTP Deploy to Stage
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Composer Autoloader
+      run: |
+        composer install --no-dev --prefer-dist --no-progress 
+        composer dump-autoload -o 
+
+    - name: FTP Deploy
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ${{ secrets.SFTP_HOST }}
+        username: ${{ secrets.SFTP_USER }}
+        password: ${{ secrets.SFTP_PASS }}
+        server-dir: /web/dev.hyggeland.ru/public_html/wp-content/plugins/woocommerce-boxberry/
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/.github*/**
+          **/node_modules/**
+          **/src/**
+          CHANGELOG.md
+          README.md
+          readme.txt
+          .distignore
