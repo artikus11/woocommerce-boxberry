@@ -16,7 +16,7 @@ class Checkout {
 		add_action( 'woocommerce_after_checkout_validation', [ $this, 'validate_checkout' ], 10, 2 );
 		add_action( 'woocommerce_checkout_create_order', [ $this, 'update_choice_point' ] );
 
-		add_action( 'woocommerce_review_order_after_shipping', [ $this, 'add_button_choice_point' ] );
+		add_action( 'woocommerce_review_order_after_shipping', [ __CLASS__, 'add_button_choice_point' ] );
 
 		add_filter( 'woocommerce_package_rates', [ $this, 'delivery_rates' ], 10, 2 );
 	}
@@ -60,9 +60,9 @@ class Checkout {
 	}
 
 
-	public function add_button_choice_point() {
+	public static function add_button_choice_point() {
 
-		$chosen_rate = $this->get_chosen_rate_shipping();
+		$chosen_rate = self::get_chosen_rate_shipping();
 
 		if ( is_checkout() && $chosen_rate ) {
 
@@ -70,11 +70,11 @@ class Checkout {
 
 			if ( isset( $shipping ) ) {
 
-				$widget_key = $this->get_widget_key( $shipping );
+				$widget_key = self::get_widget_key( $shipping );
 
-				$city = $this->get_city();
+				$city = self::get_city();
 
-				[ $weight, $height, $depth, $width ] = $this->get_dimension_and_weight( $shipping );
+				[ $weight, $height, $depth, $width ] = self::get_dimension_and_weight( $shipping );
 
 				$total_val = WC()->cart->get_cart_contents_total() + WC()->cart->get_total_tax();
 
@@ -198,7 +198,7 @@ class Checkout {
 	 *
 	 * @return string
 	 */
-	protected function get_widget_key( $shipping ): string {
+	protected static function get_widget_key( $shipping ): string {
 
 		$key = $shipping->get_option( 'key' );
 
@@ -227,7 +227,7 @@ class Checkout {
 	 *
 	 * @return float[]|int[]
 	 */
-	protected function get_dimension_and_weight( $shipping ): array {
+	protected static function get_dimension_and_weight( $shipping ): array {
 
 		$weight       = 0;
 		$current_unit = strtolower( get_option( 'woocommerce_weight_unit' ) );
@@ -278,7 +278,7 @@ class Checkout {
 	/**
 	 * @return array|false|string|string[]|null
 	 */
-	protected function get_city() {
+	protected static function get_city() {
 
 		$billing_city  = WC()->customer->get_billing_city();
 		$shipping_city = WC()->customer->get_shipping_city();
@@ -295,7 +295,7 @@ class Checkout {
 	}
 
 
-	protected function get_chosen_rate_shipping(): int {
+	public static function get_chosen_rate_shipping(): int {
 
 		if ( WC()->session ) {
 			$shipping_packages               = WC()->shipping()->get_packages();
