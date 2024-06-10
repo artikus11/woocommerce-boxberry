@@ -113,10 +113,11 @@ class Tracking {
 				? $shipping_instance->get_option( 'order_prefix' ) . '_'
 				: '' ) . $order->get_order_number() );
 
-		$parsel->setPrice( $order->get_total() - $shipping_cost );
+		$parsel->setPrice( apply_filters( 'bxbw_price', $order->get_total() - $shipping_cost ) );
+
 		$parsel->setDeliverySum( $shipping_cost );
 
-		if ( strpos( $shipping_method_id, '_after' ) === false ) {
+		if ( ! str_contains( $shipping_method_id, '_after' ) ) {
 			$parsel->setPaymentSum( 0 );
 		} else {
 			$parsel->setPaymentSum( $order->get_total() );
@@ -174,6 +175,7 @@ class Tracking {
 		}
 
 		$parsel->setShop( $shop );
+
 		$parsel_create->setParsel( $parsel );
 
 		$auto_act    = (int) $shipping_instance->get_option( 'autoact' );
@@ -267,7 +269,7 @@ class Tracking {
 			'track'  => $tracking_number,
 			'act'    => $act_link,
 			'client' => $client,
-			'order' => $order,
+			'order'  => $order,
 		];
 
 		if ( ! empty( $error_text ) && empty( $tracking_number ) ) {
@@ -338,9 +340,6 @@ class Tracking {
 						esc_html( $answer->offsetGet( $offset )->getDate() )
 					);
 				}
-
-
-
 			}
 		} catch ( Exception $e ) {
 			return '<div>
@@ -488,10 +487,12 @@ class Tracking {
 			$item = new Item();
 			$id   = (string) ( ( ! empty( $product->get_sku() ) ) ? $product->get_sku() : $order_item['product_id'] );
 
-			$item->setId( $id );
+			$item_price  = apply_filters( 'bxbw_item_price', (float) $order_item['total'] / $order_item['qty'] );
+			$item_weight = apply_filters( 'bxbw_item_weight', $item_weight );
 
+			$item->setId( $id );
 			$item->setName( $order_item['name'] );
-			$item->setPrice( (float) $order_item['total'] / $order_item['qty'] );
+			$item->setPrice( $item_price );
 			$item->setQuantity( $order_item['qty'] );
 			$item->setWeight( $item_weight );
 
