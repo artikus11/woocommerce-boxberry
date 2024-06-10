@@ -1,7 +1,7 @@
 === Интеграция со службой доставки Boxberry ===
 
 Tags: доставка, модуль, плагин, boxberry, Boxberry, woocommerce, wordpress, цена доставки, срок доставки, стоимость доставки, служба доставки, boxberry shipping
-Stable tag: 2.20
+Stable tag: 1.0.1
 Tested up to: 6.2.2
 Contributors: akazanstev, mrswed
 Requires at least: 4.9
