@@ -44,6 +44,7 @@ class ListCitiesCollection extends Collection
      * @param mixed $value
      * @throws BadValueException
      */
+	#[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (!$value instanceof City) {
