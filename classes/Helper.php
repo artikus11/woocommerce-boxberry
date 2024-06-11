@@ -71,13 +71,13 @@ class Helper {
 	/**
 	 * @param $order
 	 *
-	 * @return object
+	 * @return object|null
 	 */
-	public static function get_shipping_instance( $order ): object {
+	public static function get_shipping_instance( $order ): ?object {
 
 		$shipping_data = self::get_shipping_data( $order );
 
-		return $shipping_data['object'];
+		return ! empty( $shipping_data['object'] ) && is_object( $shipping_data['object'] ) ? $shipping_data['object'] : null;
 	}
 
 
