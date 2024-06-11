@@ -396,7 +396,7 @@ class Tracking {
 	 *
 	 * @return \Boxberry\Client\Client
 	 */
-	protected function get_client( object $shipping_instance ): Client {
+	public function get_client( object $shipping_instance ): Client {
 
 		$client = new Client();
 		$client->setApiUrl( $shipping_instance->get_option( 'api_url' ) );
