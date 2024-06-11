@@ -2,7 +2,7 @@
 /**
  * Plugin Name:  WooCommerce Boxberry
  * Description: The plugin allows you to automatically calculate the shipping cost and create Parsel for Boxberry. Fork by Artem Abramovich
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Artem Abramovich
  * Author URI: Boxberry.ru
  * Text Domain: boxberry
