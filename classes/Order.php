@@ -8,6 +8,29 @@ class Order {
 
 		add_filter( 'woocommerce_hidden_order_itemmeta', [ $this, 'hidden_order_meta' ] );
 		add_action( 'woocommerce_admin_order_items_after_shipping', [ $this, 'view_order_delivery_time' ], 5, 1 );
+
+		add_filter( 'woocommerce_order_data_store_cpt_get_orders_query', [ $this, 'custom_query_var' ], 10, 2 );
+	}
+
+
+	/**
+	 * Handle a custom 'customvar' query var to get orders with the 'customvar' meta.
+	 *
+	 * @param  array $query      - Args for WP_Query.
+	 * @param  array $query_vars - Query vars from WC_Order_Query.
+	 *
+	 * @return array modified $query
+	 */
+	public function custom_query_var( $query, $query_vars ): array {
+
+		if ( ! empty( $query_vars['boxberry_tracking_number'] ) ) {
+			$query['meta_query'][] = [
+				'key'   => 'boxberry_tracking_number',
+				'value' => esc_attr( $query_vars['boxberry_tracking_number'] ),
+			];
+		}
+
+		return $query;
 	}
 
 
