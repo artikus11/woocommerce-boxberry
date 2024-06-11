@@ -298,14 +298,6 @@ class WC_Boxberry_Parent_Method extends WC_Shipping_Method {
 			return;
 		}
 
-		if ( function_exists( 'wc_edostavka_get_customer_location' ) ) {
-			$customer_location = wc_edostavka_get_customer_location();
-
-			if ( ! empty( $customer_location ) ) {
-				$package['destination']['city'] = $customer_location['city'];
-			}
-		}
-
 		if ( ( empty( trim( $package['destination']['city'] ) ) ) ) {
 
 			$this->add_rate(
