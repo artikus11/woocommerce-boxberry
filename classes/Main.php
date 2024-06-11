@@ -85,6 +85,9 @@ class Main {
 
 		require_once BOXBERRY_PLUGIN_DIR . '/classes/Order.php';
 		( new Order() )->init_hooks();
+
+		require_once BOXBERRY_PLUGIN_DIR . '/classes/Cron.php';
+		new Cron();
 	}
 
 
