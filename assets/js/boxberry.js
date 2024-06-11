@@ -113,7 +113,8 @@ jQuery( document ).on( 'click', function ( e ) {
 								opacity:    0.3
 							}
 						} );
-						jQuery( document.body ).trigger( 'updated_shipping_method' );
+						//jQuery( document.body ).trigger( 'updated_shipping_method' );
+						console.log(cityData);
 						jQuery( document.body ).trigger( 'update_checkout' );
 
 					} )
