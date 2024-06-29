@@ -370,9 +370,9 @@ class WC_Boxberry_Parent_Method extends WC_Shipping_Method {
 			$height = $depth = $width = 0;
 
 			if ( ! is_null( $currentProduct ) ) {
-				$height = (int) round( $currentProduct->get_height() * $dimensionC );
-				$depth  = (int) round( $currentProduct->get_length() * $dimensionC );
-				$width  = (int) round( $currentProduct->get_width() * $dimensionC );
+				$height = (int) round( (int) $currentProduct->get_height() * (int) $dimensionC );
+				$depth  = (int) round( (int) $currentProduct->get_length() * (int) $dimensionC );
+				$width  = (int) round( (int) $currentProduct->get_width() * (int) $dimensionC );
 			}
 
 			$client = $this->get_client();
